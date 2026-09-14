@@ -11,7 +11,7 @@ bus-neutral contracts in [`hwcore`](https://github.com/Tape-Out/hwcore), assembl
 
 ## Status
 
-Planned. The entry in [`index`](https://github.com/Tape-Out/index) tracks what lands when.
+Planned, not started. The scope is a TL-UL binder, not full TileLink. Work starts when a TileLink initiator has to join a Tape-Out SoC.
 
 ## License
 
