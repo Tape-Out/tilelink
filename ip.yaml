@@ -15,7 +15,7 @@ deps:
 area:
   probe:
     module: mkTlulBindProbe
-    src: tb/Probe.bsv
+    src: htest/Probe.bsv
     check: true
   base:
     fixed: 357.04
