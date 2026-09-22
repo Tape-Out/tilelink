@@ -6,8 +6,7 @@ lang: bsv
 identity:
   slug: tilelink-tapeout-bsv
   display_name: TileLink TL-UL bindings for the neutral register contract
-  summary: Binds a zero-wait or stalling register target to TileLink Uncached 
-    Lightweight slave pins.
+  summary: Binds a zero-wait or stalling register target to TileLink Uncached Lightweight slave pins.
   category: infrastructure
   maturity: simulated
 deps:
@@ -23,7 +22,8 @@ area:
   error:
     bound: 0.05
     sign: over
-    note: 'the isolated probe measures 257.04, a lower bound. A binder costs more in place than on its own: for APB4 the wraps of four IPs came out up to 96.04 above the neutral top while the probe gave 17.92, so amba is priced at 100. This bus has no row in the xirang bus table yet, so the in-place cost cannot be measured; the price is the probe plus 100 until an assembly measures it'
+    note: 'the isolated probe measures 257.04, a lower bound. A binder costs more in place than on its own: for APB4 the wraps of four IPs came out up to 96.04 above the neutral top while the probe gave
+      17.92, so amba is priced at 100. This bus has no row in the xirang bus table yet, so the in-place cost cannot be measured; the price is the probe plus 100 until an assembly measures it'
   corner:
     tool: ecc
     pdk: ics55
@@ -31,3 +31,21 @@ area:
     measured: '2026-09-16'
     toolchain: bsc 2026.01 · yosys 0.68+195 · ecc 0.1.0a11
     gen_digest: sha256:8d5502aa6717d7ce
+params:
+  aw:
+    type: choice
+    values:
+    - 8
+    - 16
+    - 32
+    default: 8
+  dw:
+    type: choice
+    values:
+    - 32
+    - 64
+    default: 32
+test:
+  noarea:
+  - aw
+  - dw
